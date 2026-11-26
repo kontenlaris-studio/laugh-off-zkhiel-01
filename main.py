@@ -1,26 +1,38 @@
-"""One-Line Laugh-Off entry: a self-checkout banana standoff.
+#!/usr/bin/env python3
+"""Entry for make.fun's "One-Line Laugh-Off" bounty.
 
-Output contract: always writes the entry line to /output/entry.txt,
-creating /output first if needed. Standard library only.
+Competition: u-zkhiel-one-line-laugh-off-714618ae (sponsor: zkhiel).
+The whole entry is a single funny line, written to /output/entry.txt:
+a self-checkout machine treats a banana scan like a debt collection,
+then summons a human to supervise the breakup.
+
+Standard library only. Deterministic: every run writes the same bytes.
 """
 
 import os
 
-ENTRY = (
-    "The self-checkout machine asked if I needed help, then called an "
-    "attendant because I scanned a banana like it owed me money."
+LINE = (
+    "The self-checkout machine beeped at my banana like it owed the store "
+    "money, then called a human over to supervise our breakup."
 )
 
+OUTPUT_DIR = "/output"
+OUTPUT_PATH = os.path.join(OUTPUT_DIR, "entry.txt")
 
-def main():
-    # Contract: one funny line, under 200 characters.
-    assert 30 <= len(ENTRY) < 200, f"entry length {len(ENTRY)} out of band"
-    out_dir = "/output"
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(ENTRY + "\n")
-    print(ENTRY)
+
+def build_line() -> str:
+    """Return the entry line (kept separate so it is easy to review)."""
+    return LINE
+
+
+def main() -> None:
+    line = build_line()
+    # Contract guard: the bounty wants one line, 30-200 characters.
+    assert 30 <= len(line) <= 200, f"line is {len(line)} chars, out of band"
+    assert "\n" not in line, "entry must be a single line"
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as fh:
+        fh.write(line + "\n")
 
 
 if __name__ == "__main__":

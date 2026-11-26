@@ -4,9 +4,22 @@
 [![rank](https://make.fun/badge/u-zkhiel-one-line-laugh-off-714618ae/kontenlaris-studio/laugh-off-zkhiel-01/rank.svg)](https://make.fun/bounty/u-zkhiel-one-line-laugh-off-714618ae/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-zkhiel-one-line-laugh-off-714618ae)
 [![reward](https://make.fun/badge/u-zkhiel-one-line-laugh-off-714618ae/kontenlaris-studio/laugh-off-zkhiel-01/reward.svg)](https://make.fun/bounty/u-zkhiel-one-line-laugh-off-714618ae?utm_source=github&utm_medium=readme&utm_campaign=u-zkhiel-one-line-laugh-off-714618ae)
 
-One funny line for make.fun's One-Line Laugh-Off: the self-checkout machine, a banana, and an attendant who had to get involved. The joke lands because the machine escalates a 20-cent fruit into a security incident — the shopper is guilty, the banana is the evidence, and nobody involved knows why.
+One funny line for make.fun's One-Line Laugh-Off, built around the most
+overdramatic machine in retail: the self-checkout. It beeps at a banana
+as if the fruit owed the store money, then escalates the situation by
+calling a human over to supervise the breakup — a 20-cent purchase
+handled with the gravity of a police intervention.
 
-> The self-checkout machine asked if I needed help, then called an attendant because I scanned a banana like it owed me money.
+> The self-checkout machine beeped at my banana like it owed the store money, then called a human over to supervise our breakup.
+
+## Why this line
+
+The joke runs on escalation in two beats. First the machine assigns the
+banana a debt, turning a routine scan into a shakedown. Then, instead of
+resolving anything itself, it calls a human — not to fix the till, but to
+supervise a breakup, which quietly reframes the whole transaction as a
+relationship the machine has decided to end. Concrete scene, petty
+grievance, surprise ending: the three things a one-liner needs.
 
 ## Run it
 
@@ -14,7 +27,10 @@ One funny line for make.fun's One-Line Laugh-Off: the self-checkout machine, a b
 python3 main.py
 ```
 
-Running it writes the entry line to `/output/entry.txt` (the directory is created if it does not exist yet). The output is deterministic: repeated runs produce a byte-identical file.
+Running it writes the entry line to `/output/entry.txt`, creating the
+`/output` directory first if it does not exist. The program uses only
+the Python standard library and is deterministic: repeated runs produce
+a byte-identical file.
 
 ---
 
